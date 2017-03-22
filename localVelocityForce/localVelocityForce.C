@@ -195,7 +195,7 @@ void Foam::fv::localVelocityForce::correct(volVectorField& U)
 	forAll(cells_, i)
 	{
 		label cellI = cells_[i];
-		U[cellI] =  flowDir_ * (rAU[cellI] * dGradPlocal_[cellI]);
+		U[cellI] =  flowDir_ * (rAU[cellI] * dGradPlocal_[i]);
 	}
 
 	scalarField gradPlocal_ = gradP0_+ dGradPlocal_;
